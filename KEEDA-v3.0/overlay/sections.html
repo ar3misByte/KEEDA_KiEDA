@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sections - KiCad Live</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body data-page="sections">
+
+<div class="brand">
+  <span class="logo">&#9672;</span>
+  <div><h1>KiCad Live</h1><p>Project manager</p></div>
+</div>
+
+<div class="topbar">
+  <div class="project"><span>Project</span><b id="project-name">-</b></div>
+  <div class="right">
+    <span class="pill" id="online-count">0 online</span>
+    <span class="pill"><span class="dot" id="conn-dot"></span><span id="conn-text">Connecting...</span></span>
+  </div>
+</div>
+
+<nav></nav>
+
+<main>
+<h2 class="page-title">Sections</h2>
+<p class="page-sub">Each schematic sheet is a section. Give a sheet an owner and nobody else's save can
+overwrite it: their edit is refused and their copy is put back (a backup is kept). Sheets with no
+owner stay open to everyone.</p>
+
+<div class="note">
+  Split a big design into hierarchical sheets in KiCad (one <strong>.kicad_sch</strong> per section,
+  e.g. power, sensors, MCU), then assign each here or with
+  <strong>--claim power.kicad_sch</strong> when starting the agent.
+</div>
+
+<div class="filters">
+  <div class="spacer"></div>
+  <span class="pill" id="obj-count">0 sections</span>
+</div>
+
+<div class="card">
+  <table class="data">
+    <thead><tr><th>Section (sheet file)</th><th>Owner</th><th>Last change</th><th>Status</th><th>Assign</th></tr></thead>
+    <tbody id="objects"></tbody>
+  </table>
+</div>
+
+<h3 class="page-title" style="font-size:16px;margin-top:26px">Project files shared with the team</h3>
+<p class="page-sub">A computer that has no copy of the project can download all of these with
+<strong>--inherit-only</strong>.</p>
+<div class="card">
+  <table class="data">
+    <thead><tr><th>File</th><th>Kind</th><th>Shared by</th><th>Revision</th><th>Size</th></tr></thead>
+    <tbody id="files"></tbody>
+  </table>
+</div>
+
+</main>
+
+<div class="toasts"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>
